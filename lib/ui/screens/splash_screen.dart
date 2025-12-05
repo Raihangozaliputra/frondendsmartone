@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smartone/data/services/auth_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,13 +13,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToLogin();
+    _checkAuthentication();
   }
 
-  _navigateToLogin() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+  _checkAuthentication() async {
+    await Future.delayed(Duration(milliseconds: 1500));
+
+    final prefs = await SharedPreferences.getInstance();
+    final isFirstLaunch = prefs.getBool('is_first_launch') ?? true;
+    final isAuthenticated = await AuthService().isAuthenticated();
+
     if (mounted) {
-      Navigator.pushReplacementNamed(context, '/login');
+      if (isFirstLaunch) {
+        // Mark that the app has been launched
+        await prefs.setBool('is_first_launch', false);
+        Navigator.pushReplacementNamed(context, '/welcome');
+      } else if (isAuthenticated) {
+        Navigator.pushReplacementNamed(context, '/home');
+      } else {
+        Navigator.pushReplacementNamed(context, '/login');
+      }
     }
   }
 

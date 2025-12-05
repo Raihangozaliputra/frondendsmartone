@@ -20,12 +20,18 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get email => throw _privateConstructorUsedError;
+  @HiveField(3)
   String get role =>
       throw _privateConstructorUsedError; // "student", "teacher", "admin"
+  @HiveField(4)
   String? get phoneNumber => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get profileImageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,12 +45,12 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String email,
-      String role,
-      String? phoneNumber,
-      String? profileImageUrl});
+      {@HiveField(0) String id,
+      @HiveField(1) String name,
+      @HiveField(2) String email,
+      @HiveField(3) String role,
+      @HiveField(4) String? phoneNumber,
+      @HiveField(5) String? profileImageUrl});
 }
 
 /// @nodoc
@@ -104,12 +110,12 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String email,
-      String role,
-      String? phoneNumber,
-      String? profileImageUrl});
+      {@HiveField(0) String id,
+      @HiveField(1) String name,
+      @HiveField(2) String email,
+      @HiveField(3) String role,
+      @HiveField(4) String? phoneNumber,
+      @HiveField(5) String? profileImageUrl});
 }
 
 /// @nodoc
@@ -160,30 +166,37 @@ class __$$UserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 0)
 class _$UserImpl implements _User {
   const _$UserImpl(
-      {required this.id,
-      required this.name,
-      required this.email,
-      required this.role,
-      this.phoneNumber,
-      this.profileImageUrl});
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.name,
+      @HiveField(2) required this.email,
+      @HiveField(3) required this.role,
+      @HiveField(4) this.phoneNumber,
+      @HiveField(5) this.profileImageUrl});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   final String name;
   @override
+  @HiveField(2)
   final String email;
   @override
+  @HiveField(3)
   final String role;
 // "student", "teacher", "admin"
   @override
+  @HiveField(4)
   final String? phoneNumber;
   @override
+  @HiveField(5)
   final String? profileImageUrl;
 
   @override
@@ -227,26 +240,32 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final String id,
-      required final String name,
-      required final String email,
-      required final String role,
-      final String? phoneNumber,
-      final String? profileImageUrl}) = _$UserImpl;
+      {@HiveField(0) required final String id,
+      @HiveField(1) required final String name,
+      @HiveField(2) required final String email,
+      @HiveField(3) required final String role,
+      @HiveField(4) final String? phoneNumber,
+      @HiveField(5) final String? profileImageUrl}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   String get name;
   @override
+  @HiveField(2)
   String get email;
   @override
+  @HiveField(3)
   String get role;
   @override // "student", "teacher", "admin"
+  @HiveField(4)
   String? get phoneNumber;
   @override
+  @HiveField(5)
   String? get profileImageUrl;
   @override
   @JsonKey(ignore: true)

@@ -45,6 +45,8 @@ Aplikasi absensi cerdas berbasis Flutter dengan fitur pengenalan wajah menggunak
 - **AI/ML**: Google ML Kit (Face Detection)
 - **Location**: Geolocator
 - **UI Components**: Flutter Material Design
+- **Charts**: FL Chart
+- **Image Processing**: Flutter Image Compress
 
 ## Struktur Direktori
 
@@ -55,9 +57,6 @@ lib/
 │   ├── models/              # Data models (User, Attendance, etc.)
 │   ├── repositories/        # Repository interfaces and implementations
 │   └── providers/           # API clients and data providers
-├── domain/
-│   ├── entities/            # Domain entities
-│   └── usecases/            # Business logic use cases
 ├── presentation/
 │   ├── controllers/         # Riverpod controllers
 │   ├── screens/             # UI screens

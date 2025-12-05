@@ -20,13 +20,21 @@ Attendance _$AttendanceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Attendance {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get userId => throw _privateConstructorUsedError;
+  @HiveField(2)
   DateTime get checkInTime => throw _privateConstructorUsedError;
+  @HiveField(3)
   DateTime? get checkOutTime => throw _privateConstructorUsedError;
+  @HiveField(4)
   double get latitude => throw _privateConstructorUsedError;
+  @HiveField(5)
   double get longitude => throw _privateConstructorUsedError;
+  @HiveField(6)
   String? get imageUrl => throw _privateConstructorUsedError;
+  @HiveField(7)
   String? get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,14 +50,14 @@ abstract class $AttendanceCopyWith<$Res> {
       _$AttendanceCopyWithImpl<$Res, Attendance>;
   @useResult
   $Res call(
-      {String id,
-      String userId,
-      DateTime checkInTime,
-      DateTime? checkOutTime,
-      double latitude,
-      double longitude,
-      String? imageUrl,
-      String? status});
+      {@HiveField(0) String id,
+      @HiveField(1) String userId,
+      @HiveField(2) DateTime checkInTime,
+      @HiveField(3) DateTime? checkOutTime,
+      @HiveField(4) double latitude,
+      @HiveField(5) double longitude,
+      @HiveField(6) String? imageUrl,
+      @HiveField(7) String? status});
 }
 
 /// @nodoc
@@ -120,14 +128,14 @@ abstract class _$$AttendanceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String userId,
-      DateTime checkInTime,
-      DateTime? checkOutTime,
-      double latitude,
-      double longitude,
-      String? imageUrl,
-      String? status});
+      {@HiveField(0) String id,
+      @HiveField(1) String userId,
+      @HiveField(2) DateTime checkInTime,
+      @HiveField(3) DateTime? checkOutTime,
+      @HiveField(4) double latitude,
+      @HiveField(5) double longitude,
+      @HiveField(6) String? imageUrl,
+      @HiveField(7) String? status});
 }
 
 /// @nodoc
@@ -189,35 +197,44 @@ class __$$AttendanceImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 1)
 class _$AttendanceImpl implements _Attendance {
   const _$AttendanceImpl(
-      {required this.id,
-      required this.userId,
-      required this.checkInTime,
-      this.checkOutTime,
-      required this.latitude,
-      required this.longitude,
-      this.imageUrl,
-      this.status});
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.userId,
+      @HiveField(2) required this.checkInTime,
+      @HiveField(3) this.checkOutTime,
+      @HiveField(4) required this.latitude,
+      @HiveField(5) required this.longitude,
+      @HiveField(6) this.imageUrl,
+      @HiveField(7) this.status});
 
   factory _$AttendanceImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   final String userId;
   @override
+  @HiveField(2)
   final DateTime checkInTime;
   @override
+  @HiveField(3)
   final DateTime? checkOutTime;
   @override
+  @HiveField(4)
   final double latitude;
   @override
+  @HiveField(5)
   final double longitude;
   @override
+  @HiveField(6)
   final String? imageUrl;
   @override
+  @HiveField(7)
   final String? status;
 
   @override
@@ -266,33 +283,41 @@ class _$AttendanceImpl implements _Attendance {
 
 abstract class _Attendance implements Attendance {
   const factory _Attendance(
-      {required final String id,
-      required final String userId,
-      required final DateTime checkInTime,
-      final DateTime? checkOutTime,
-      required final double latitude,
-      required final double longitude,
-      final String? imageUrl,
-      final String? status}) = _$AttendanceImpl;
+      {@HiveField(0) required final String id,
+      @HiveField(1) required final String userId,
+      @HiveField(2) required final DateTime checkInTime,
+      @HiveField(3) final DateTime? checkOutTime,
+      @HiveField(4) required final double latitude,
+      @HiveField(5) required final double longitude,
+      @HiveField(6) final String? imageUrl,
+      @HiveField(7) final String? status}) = _$AttendanceImpl;
 
   factory _Attendance.fromJson(Map<String, dynamic> json) =
       _$AttendanceImpl.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   String get userId;
   @override
+  @HiveField(2)
   DateTime get checkInTime;
   @override
+  @HiveField(3)
   DateTime? get checkOutTime;
   @override
+  @HiveField(4)
   double get latitude;
   @override
+  @HiveField(5)
   double get longitude;
   @override
+  @HiveField(6)
   String? get imageUrl;
   @override
+  @HiveField(7)
   String? get status;
   @override
   @JsonKey(ignore: true)

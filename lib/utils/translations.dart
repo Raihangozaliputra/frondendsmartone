@@ -1,0 +1,411 @@
+class Translations {
+  static Map<String, String> _english = {
+    // Authentication
+    'login': 'Login',
+    'register': 'Register',
+    'email': 'Email',
+    'password': 'Password',
+    'full_name': 'Full Name',
+    'already_have_account': 'Already have an account? Login',
+    'dont_have_account': 'Don\'t have an account? Register',
+    'invalid_credentials': 'Invalid credentials',
+    'login_failed': 'Login failed',
+    'registration_failed': 'Registration failed',
+
+    // Welcome Screen
+    'welcome_description':
+        'Smart attendance system with AI-powered face recognition',
+    'select_language': 'Select Language',
+    'select_theme': 'Select Theme',
+    'light_mode': 'Light Mode',
+    'dark_mode': 'Dark Mode',
+
+    // Dashboard
+    'dashboard': 'Dashboard',
+    'admin_dashboard': 'Admin Dashboard',
+    'teacher_dashboard': 'Teacher Dashboard',
+    'student_dashboard': 'Student Dashboard',
+    'my_overview': 'My Overview',
+    'weekly_attendance': 'Weekly Attendance',
+    'recent_activity': 'Recent Activity',
+    'you': 'You',
+    'checked_in_at': 'Checked in at',
+    'today': 'Today',
+    'late_arrival': 'Late arrival',
+    'yesterday': 'Yesterday',
+    'unable_to_load_user_data': 'Unable to load user data',
+    'failed_to_load_dashboard_data': 'Failed to load dashboard data',
+    'teacher_overview': 'Teacher Overview',
+    'students': 'Students',
+    'classes': 'Classes',
+    'class_attendance': 'Class Attendance',
+    'recent_students': 'Recent Students',
+    'failed_to_load_students': 'Failed to load students',
+    'unknown': 'Unknown',
+    'id': 'ID',
+    'admin_overview': 'Admin Overview',
+    'users': 'Users',
+    'system_overview': 'System Overview',
+    'recent_users': 'Recent Users',
+    'failed_to_load_users': 'Failed to load users',
+    'role': 'Role',
+    'admin': 'Admin',
+    'teacher': 'Teacher',
+    'no_data_available': 'No data available',
+
+    // Navigation
+    'home': 'Home',
+    'attendance': 'Attendance',
+    'reports': 'Reports',
+    'settings': 'Settings',
+    'logout': 'Logout',
+
+    // Attendance
+    'check_in': 'Check In',
+    'check_out': 'Check Out',
+    'today_attendance': 'Today\'s Attendance',
+    'status': 'Status',
+    'checked_in': 'Checked In',
+    'not_checked_in': 'Not Checked In',
+    'check_in_time': 'Check-in Time',
+    'check_out_time': 'Check-out Time',
+    'attendance_recorded_successfully': 'Attendance recorded successfully!',
+    'attendance_history': 'Attendance History',
+    'not_checked_out_yet': 'Not checked out yet',
+    'no_attendance_records_found': 'No attendance records found',
+
+    // Reports
+    'attendance_reports': 'Attendance Reports',
+    'daily_report': 'Daily Report',
+    'monthly_report': 'Monthly Report',
+    'late_arrivals_report': 'Late Arrivals Report',
+    'custom_report': 'Custom Report',
+    'generate_report': 'Generate Report',
+    'report_summary': 'Report Summary',
+    'total_records': 'Total Records',
+    'present': 'Present',
+    'late': 'Late',
+    'absent': 'Absent',
+    'attendance_rate': 'Attendance Rate',
+    'detailed_records': 'Detailed Records',
+    'date': 'Date',
+    'start_date': 'Start Date',
+    'end_date': 'End Date',
+    'generating': 'Generating...',
+    'no_records_found': 'No records found',
+    'check_in': 'Check-in',
+    'check_out': 'Check-out',
+    'report': 'Report',
+
+    // User Management
+    'user_management': 'User Management',
+    'users': 'Users',
+    'add_user': 'Add User',
+    'edit_user': 'Edit User',
+    'delete_user': 'Delete User',
+    'confirm_delete': 'Confirm Delete',
+    'sure_delete_user': 'Are you sure you want to delete this user?',
+    'user_deleted_successfully': 'User deleted successfully',
+    'search_users': 'Search users...',
+    'no_users_found': 'No users found',
+
+    // Classroom Management
+    'classroom_management': 'Classroom Management',
+    'classrooms': 'Classrooms',
+    'add_classroom': 'Add Classroom',
+    'edit_classroom': 'Edit Classroom',
+    'delete_classroom': 'Delete Classroom',
+    'sure_delete_classroom': 'Are you sure you want to delete this classroom?',
+    'classroom_deleted_successfully': 'Classroom deleted successfully',
+    'search_classrooms': 'Search classrooms...',
+    'no_classrooms_found': 'No classrooms found',
+    'name': 'Name',
+    'description': 'Description',
+
+    // Student Management
+    'student_management': 'Student Management',
+    'add_student': 'Add Student',
+    'search_students': 'Search students...',
+    'no_students_found': 'No students found',
+    'no_students_match_search': 'No students match your search',
+    'clear_search': 'Clear search',
+    'mark_absent': 'Mark Absent',
+    'sure_mark_absent': 'Are you sure you want to mark',
+    'marked_as_absent': 'marked as absent',
+
+    // Student Details
+    'student_details': 'Student Details',
+    'class_information': 'Class Information',
+    'class': 'Class',
+    'student_id': 'Student ID',
+    'attendance_summary': 'Attendance Summary',
+    'total_classes': 'Total Classes',
+    'attended_classes': 'Attended Classes',
+    'absent_classes': 'Absent Classes',
+
+    // Settings
+    'settings_title': 'Settings',
+    'general': 'General',
+    'notifications': 'Notifications',
+    'enable_push_notifications': 'Enable push notifications',
+    'face_recognition': 'Face Recognition',
+    'use_face_recognition': 'Use face recognition for attendance',
+    'location_tracking': 'Location Tracking',
+    'track_location': 'Track location during attendance',
+    'attendance_reminders': 'Attendance Reminders',
+    'get_reminders': 'Get reminders for check-in and check-out',
+    'preferences': 'Preferences',
+    'language': 'Language',
+    'theme': 'Theme',
+    'account': 'Account',
+    'change_password': 'Change Password',
+    'confirm_logout': 'Confirm Logout',
+    'sure_logout': 'Are you sure you want to logout?',
+
+    // Camera
+    'camera': 'Camera',
+    'position_face_frame': 'Position your face in the frame',
+    'face_detected': 'Face detected! Tap the camera button',
+    'camera_permission_denied':
+        'Camera permission denied. Please grant permission to use this feature.',
+    'grant_permission': 'Grant Permission',
+    'low_quality': 'Low Quality',
+    'low_quality_description':
+        'The captured face image quality is low. Please try again with better lighting and positioning.',
+    'no_face_detected': 'No Face Detected',
+    'no_face_description':
+        'No face was detected in the captured image. Please try again.',
+    'error': 'Error',
+    'capture_image': 'Capture Image',
+
+    // Common
+    'cancel': 'Cancel',
+    'ok': 'OK',
+    'delete': 'Delete',
+    'update': 'Update',
+    'create': 'Create',
+    'retry': 'Retry',
+    'loading': 'Loading...',
+    'success': 'Success',
+    'failed': 'Failed',
+    'add': 'Add',
+    'name': 'Name',
+    'view_details': 'View Details',
+    'welcome': 'Welcome',
+    'smart_presence_system': 'Smart Presence System',
+    'open_camera': 'Open Camera',
+  };
+
+  static Map<String, String> _indonesian = {
+    // Authentication
+    'login': 'Masuk',
+    'register': 'Daftar',
+    'email': 'Email',
+    'password': 'Kata Sandi',
+    'full_name': 'Nama Lengkap',
+    'already_have_account': 'Sudah punya akun? Masuk',
+    'dont_have_account': 'Belum punya akun? Daftar',
+    'invalid_credentials': 'Kredensial tidak valid',
+    'login_failed': 'Gagal masuk',
+    'registration_failed': 'Gagal mendaftar',
+
+    // Welcome Screen
+    'welcome_description':
+        'Sistem absensi cerdas dengan pengenalan wajah berbasis AI',
+    'select_language': 'Pilih Bahasa',
+    'select_theme': 'Pilih Tema',
+    'light_mode': 'Mode Terang',
+    'dark_mode': 'Mode Gelap',
+
+    // Dashboard
+    'dashboard': 'Dasbor',
+    'admin_dashboard': 'Dasbor Admin',
+    'teacher_dashboard': 'Dasbor Guru',
+    'student_dashboard': 'Dasbor Siswa',
+    'my_overview': 'Ikhtisar Saya',
+    'weekly_attendance': 'Kehadiran Mingguan',
+    'recent_activity': 'Aktivitas Terbaru',
+    'you': 'Anda',
+    'checked_in_at': 'Masuk pada',
+    'today': 'Hari Ini',
+    'late_arrival': 'Keterlambatan',
+    'yesterday': 'Kemarin',
+    'unable_to_load_user_data': 'Tidak dapat memuat data pengguna',
+    'failed_to_load_dashboard_data': 'Gagal memuat data dasbor',
+    'teacher_overview': 'Ikhtisar Guru',
+    'students': 'Siswa',
+    'classes': 'Kelas',
+    'class_attendance': 'Kehadiran Kelas',
+    'recent_students': 'Siswa Terbaru',
+    'failed_to_load_students': 'Gagal memuat siswa',
+    'unknown': 'Tidak Diketahui',
+    'id': 'ID',
+    'admin_overview': 'Ikhtisar Admin',
+    'users': 'Pengguna',
+    'system_overview': 'Ikhtisar Sistem',
+    'recent_users': 'Pengguna Terbaru',
+    'failed_to_load_users': 'Gagal memuat pengguna',
+    'role': 'Peran',
+    'admin': 'Admin',
+    'teacher': 'Guru',
+    'no_data_available': 'Tidak ada data tersedia',
+
+    // Navigation
+    'home': 'Beranda',
+    'attendance': 'Kehadiran',
+    'reports': 'Laporan',
+    'settings': 'Pengaturan',
+    'logout': 'Keluar',
+
+    // Attendance
+    'check_in': 'Masuk',
+    'check_out': 'Keluar',
+    'today_attendance': 'Kehadiran Hari Ini',
+    'status': 'Status',
+    'checked_in': 'Sudah Masuk',
+    'not_checked_in': 'Belum Masuk',
+    'check_in_time': 'Waktu Masuk',
+    'check_out_time': 'Waktu Keluar',
+    'attendance_recorded_successfully': 'Absensi berhasil dicatat!',
+    'attendance_history': 'Riwayat Kehadiran',
+    'not_checked_out_yet': 'Belum keluar',
+    'no_attendance_records_found': 'Tidak ada data kehadiran ditemukan',
+
+    // Reports
+    'attendance_reports': 'Laporan Kehadiran',
+    'daily_report': 'Laporan Harian',
+    'monthly_report': 'Laporan Bulanan',
+    'late_arrivals_report': 'Laporan Keterlambatan',
+    'custom_report': 'Laporan Kustom',
+    'generate_report': 'Buat Laporan',
+    'report_summary': 'Ringkasan Laporan',
+    'total_records': 'Total Data',
+    'present': 'Hadir',
+    'late': 'Terlambat',
+    'absent': 'Tidak Hadir',
+    'attendance_rate': 'Tingkat Kehadiran',
+    'detailed_records': 'Data Detail',
+    'date': 'Tanggal',
+    'start_date': 'Tanggal Mulai',
+    'end_date': 'Tanggal Selesai',
+    'generating': 'Membuat...',
+    'no_records_found': 'Tidak ada data ditemukan',
+    'check_in': 'Masuk',
+    'check_out': 'Keluar',
+    'report': 'Laporan',
+
+    // User Management
+    'user_management': 'Manajemen Pengguna',
+    'users': 'Pengguna',
+    'add_user': 'Tambah Pengguna',
+    'edit_user': 'Edit Pengguna',
+    'delete_user': 'Hapus Pengguna',
+    'confirm_delete': 'Konfirmasi Hapus',
+    'sure_delete_user': 'Apakah Anda yakin ingin menghapus pengguna ini?',
+    'user_deleted_successfully': 'Pengguna berhasil dihapus',
+    'search_users': 'Cari pengguna...',
+    'no_users_found': 'Tidak ada pengguna ditemukan',
+
+    // Classroom Management
+    'classroom_management': 'Manajemen Kelas',
+    'classrooms': 'Kelas',
+    'add_classroom': 'Tambah Kelas',
+    'edit_classroom': 'Edit Kelas',
+    'delete_classroom': 'Hapus Kelas',
+    'sure_delete_classroom': 'Apakah Anda yakin ingin menghapus kelas ini?',
+    'classroom_deleted_successfully': 'Kelas berhasil dihapus',
+    'search_classrooms': 'Cari kelas...',
+    'no_classrooms_found': 'Tidak ada kelas ditemukan',
+    'name': 'Nama',
+    'description': 'Deskripsi',
+
+    // Student Management
+    'student_management': 'Manajemen Siswa',
+    'add_student': 'Tambah Siswa',
+    'search_students': 'Cari siswa...',
+    'no_students_found': 'Tidak ada siswa ditemukan',
+    'no_students_match_search':
+        'Tidak ada siswa yang cocok dengan pencarian Anda',
+    'clear_search': 'Hapus pencarian',
+    'mark_absent': 'Tandai Tidak Hadir',
+    'sure_mark_absent': 'Apakah Anda yakin ingin menandai',
+    'marked_as_absent': 'ditandai sebagai tidak hadir',
+
+    // Student Details
+    'student_details': 'Detail Siswa',
+    'class_information': 'Informasi Kelas',
+    'class': 'Kelas',
+    'student_id': 'ID Siswa',
+    'attendance_summary': 'Ringkasan Kehadiran',
+    'total_classes': 'Total Kelas',
+    'attended_classes': 'Kelas yang Diikuti',
+    'absent_classes': 'Kelas yang Tidak Diikuti',
+
+    // Settings
+    'settings_title': 'Pengaturan',
+    'general': 'Umum',
+    'notifications': 'Notifikasi',
+    'enable_push_notifications': 'Aktifkan notifikasi push',
+    'face_recognition': 'Pengenalan Wajah',
+    'use_face_recognition': 'Gunakan pengenalan wajah untuk absensi',
+    'location_tracking': 'Pelacakan Lokasi',
+    'track_location': 'Lacak lokasi saat absensi',
+    'attendance_reminders': 'Pengingat Absensi',
+    'get_reminders': 'Dapatkan pengingat untuk masuk dan keluar',
+    'preferences': 'Preferensi',
+    'language': 'Bahasa',
+    'theme': 'Tema',
+    'account': 'Akun',
+    'change_password': 'Ubah Kata Sandi',
+    'confirm_logout': 'Konfirmasi Keluar',
+    'sure_logout': 'Apakah Anda yakin ingin keluar?',
+
+    // Camera
+    'camera': 'Kamera',
+    'position_face_frame': 'Posisikan wajah Anda dalam bingkai',
+    'face_detected': 'Wajah terdeteksi! Tekan tombol kamera',
+    'camera_permission_denied':
+        'Izin kamera ditolak. Harap berikan izin untuk menggunakan fitur ini.',
+    'grant_permission': 'Berikan Izin',
+    'low_quality': 'Kualitas Rendah',
+    'low_quality_description':
+        'Kualitas gambar wajah yang diambil rendah. Silakan coba lagi dengan pencahayaan yang lebih baik dan posisi yang tepat.',
+    'no_face_detected': 'Wajah Tidak Terdeteksi',
+    'no_face_description':
+        'Tidak ada wajah yang terdeteksi dalam gambar yang diambil. Silakan coba lagi.',
+    'error': 'Kesalahan',
+    'capture_image': 'Ambil Gambar',
+
+    // Common
+    'cancel': 'Batal',
+    'ok': 'OK',
+    'delete': 'Hapus',
+    'update': 'Perbarui',
+    'create': 'Buat',
+    'retry': 'Coba Lagi',
+    'loading': 'Memuat...',
+    'success': 'Berhasil',
+    'failed': 'Gagal',
+    'add': 'Tambah',
+    'name': 'Nama',
+    'view_details': 'Lihat Detail',
+    'welcome': 'Selamat Datang',
+    'smart_presence_system': 'Sistem Absensi Cerdas',
+    'open_camera': 'Buka Kamera',
+  };
+
+  static Map<String, String> getTranslations(String languageCode) {
+    switch (languageCode) {
+      case 'id':
+        return _indonesian;
+      case 'en':
+      default:
+        return _english;
+    }
+  }
+
+  static String translate(String key, {String languageCode = 'en'}) {
+    final translations = getTranslations(languageCode);
+    return translations[key] ?? key;
+  }
+}
