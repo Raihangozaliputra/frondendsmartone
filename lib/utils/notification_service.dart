@@ -25,8 +25,15 @@ class NotificationService {
           requestAlertPermission: true,
           requestBadgePermission: true,
           requestSoundPermission: true,
-          onDidReceiveLocalNotification:
-              (int id, String? title, String? body, String? payload) async {},
+          notificationCategories: [
+            DarwinNotificationCategory(
+              'attendance_reminder',
+              actions: <DarwinNotificationAction>[
+                DarwinNotificationAction.plain('id_1', 'Check In'),
+                DarwinNotificationAction.plain('id_2', 'Check Out'),
+              ],
+            ),
+          ],
         );
 
     // Initialization settings for both platforms
@@ -122,38 +129,40 @@ class NotificationService {
     required String title,
     required String body,
     required DateTime scheduledTime,
+    String? channel,
     String? payload,
-    String channel = 'general_channel_id',
   }) async {
-    // Android notification details
     final AndroidNotificationDetails androidNotificationDetails =
         AndroidNotificationDetails(
-          channel,
-          'Smart Presence',
-          channelDescription: 'Smart Presence notifications',
-          importance: Importance.max,
-          priority: Priority.high,
-          ticker: 'ticker',
-        );
-
-    // iOS notification details
-    const DarwinNotificationDetails iosNotificationDetails =
-        DarwinNotificationDetails();
-
-    // Notification details for both platforms
-    const NotificationDetails notificationDetails = NotificationDetails(
-      android: androidNotificationDetails,
-      iOS: iosNotificationDetails,
+      channel ?? 'default_channel',
+      channel ?? 'Default Channel',
+      channelDescription: 'Default notification channel',
+      importance: Importance.max,
+      priority: Priority.high,
+      ticker: 'ticker',
+      styleInformation: BigTextStyleInformation(''),
     );
 
-    // Schedule the notification
+    final DarwinNotificationDetails iOSPlatformChannelSpecifics =
+        DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+      categoryIdentifier: 'attendance_reminder',
+    );
+
+    final NotificationDetails platformChannelSpecifics = NotificationDetails(
+      android: androidNotificationDetails,
+      iOS: iOSPlatformChannelSpecifics,
+    );
+
     await _flutterLocalNotificationsPlugin.zonedSchedule(
       id,
       title,
       body,
       tz.TZDateTime.from(scheduledTime, tz.local),
-      notificationDetails,
-      androidAllowWhileIdle: true,
+      platformChannelSpecifics,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time,

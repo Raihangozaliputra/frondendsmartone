@@ -77,7 +77,7 @@ class ThemeProvider extends ChangeNotifier {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(foregroundColor: Colors.blue),
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardTheme(
         color: Colors.white,
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -108,7 +108,7 @@ class ThemeProvider extends ChangeNotifier {
       brightness: Brightness.dark,
       primaryColor: Colors.blue,
       scaffoldBackgroundColor: Colors.grey[900],
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: Colors.grey[850],
         foregroundColor: Colors.white,
         elevation: 0,

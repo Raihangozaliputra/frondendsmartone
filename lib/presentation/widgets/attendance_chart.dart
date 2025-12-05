@@ -23,13 +23,13 @@ class AttendanceChart extends StatelessWidget {
           barTouchData: BarTouchData(
             enabled: true,
             touchTooltipData: BarTouchTooltipData(
-              tooltipBgColor: Colors.grey[800],
               getTooltipItem: (group, groupIndex, rod, rodIndex) {
                 return BarTooltipItem(
                   '${attendanceData[groupIndex].toStringAsFixed(1)}%',
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 );
               },
+              tooltipMargin: 10,
             ),
           ),
           titlesData: FlTitlesData(
@@ -57,11 +57,12 @@ class AttendanceChart extends StatelessWidget {
                 showTitles: true,
                 interval: 25,
                 getTitlesWidget: (value, meta) {
-                  return SideTitleWidget(
-                    axisSide: meta.axisSide,
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 4.0),
                     child: Text(
                       '${value.toInt()}%',
                       style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+                      textAlign: TextAlign.right,
                     ),
                   );
                 },

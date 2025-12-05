@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
@@ -20,7 +22,10 @@ class ImageUtils {
       minHeight: 1000,
     );
 
-    return compressedFile!;
+    if (compressedFile == null) {
+      throw Exception('Failed to compress image');
+    }
+    return File(compressedFile.path);
   }
 
   /// Compress image bytes and return compressed bytes
@@ -50,19 +55,28 @@ class ImageUtils {
     final resizedFile = await FlutterImageCompress.compressAndGetFile(
       imageFile.absolute.path,
       targetPath,
-      minWidth: maxWidth,
-      minHeight: maxHeight,
+      minWidth: maxWidth > 1000 ? 1000 : maxWidth,
+      minHeight: maxHeight > 1000 ? 1000 : maxHeight,
     );
 
-    return resizedFile!;
+    if (resizedFile == null) {
+      throw Exception('Failed to resize image');
+    }
+    return File(resizedFile.path);
   }
 
   /// Get image dimensions
   static Future<ImageInfo> getImageInfo(File imageFile) async {
-    final imageInfo = await FlutterImageCompress.getImageSize(
-      imageFile.absolute.path,
-    );
-    return ImageInfo(width: imageInfo.width, height: imageInfo.height);
+    final bytes = await imageFile.readAsBytes();
+    final image = await decodeImageFromList(bytes);
+    return ImageInfo(width: image.width, height: image.height);
+  }
+  
+  // Helper method to get image dimensions without Flutter context
+  static Future<ui.Image> decodeImageFromList(Uint8List bytes) async {
+    final Completer<ui.Image> completer = Completer();
+    ui.decodeImageFromList(bytes, (ui.Image img) => completer.complete(img));
+    return completer.future;
   }
 }
 

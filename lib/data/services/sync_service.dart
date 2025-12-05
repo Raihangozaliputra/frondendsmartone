@@ -4,6 +4,46 @@ import 'package:smartone/data/models/user.dart';
 import 'package:smartone/data/models/attendance.dart';
 import 'package:dio/dio.dart';
 
+class SyncRecord {
+  final String id;
+  final String entityType;
+  final String entityId;
+  final String operation;
+  final Map<String, dynamic> data;
+  final DateTime timestamp;
+  bool isSynced;
+
+  SyncRecord({
+    required this.id,
+    required this.entityType,
+    required this.entityId,
+    required this.operation,
+    required this.data,
+    required this.timestamp,
+    this.isSynced = false,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'entityType': entityType,
+        'entityId': entityId,
+        'operation': operation,
+        'data': data,
+        'timestamp': timestamp.toIso8601String(),
+        'isSynced': isSynced,
+      };
+
+  factory SyncRecord.fromJson(Map<String, dynamic> json) => SyncRecord(
+        id: json['id'],
+        entityType: json['entityType'],
+        entityId: json['entityId'],
+        operation: json['operation'],
+        data: Map<String, dynamic>.from(json['data']),
+        timestamp: DateTime.parse(json['timestamp']),
+        isSynced: json['isSynced'] ?? false,
+      );
+}
+
 class SyncService {
   static final SyncService _instance = SyncService._internal();
   factory SyncService() => _instance;
@@ -118,7 +158,7 @@ class SyncService {
   /// Tambahkan record sinkronisasi untuk user
   Future<void> addUserSyncRecord(User user, String operation) async {
     final record = SyncRecord(
-      id: '${user.id}_$operation_${DateTime.now().millisecondsSinceEpoch}',
+      id: '${user.id}_${operation}_${DateTime.now().millisecondsSinceEpoch}',
       entityType: 'user',
       entityId: user.id,
       operation: operation,
@@ -135,7 +175,7 @@ class SyncService {
     String operation,
   ) async {
     final record = SyncRecord(
-      id: '${attendance.id}_$operation_${DateTime.now().millisecondsSinceEpoch}',
+      id: '${attendance.id}_${operation}_${DateTime.now().millisecondsSinceEpoch}',
       entityType: 'attendance',
       entityId: attendance.id,
       operation: operation,

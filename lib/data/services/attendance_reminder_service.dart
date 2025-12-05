@@ -23,7 +23,7 @@ class AttendanceReminderService {
     await NotificationService().scheduleNotification(
       id: _checkInReminderId,
       title: 'Check-in Reminder',
-      body: 'Don't forget to check in for today's attendance!',
+      body: "Don't forget to check in for today's attendance!",
       scheduledTime: scheduledTime,
       channel: 'attendance_channel_id',
     );
@@ -48,7 +48,7 @@ class AttendanceReminderService {
     await NotificationService().scheduleNotification(
       id: _checkOutReminderId,
       title: 'Check-out Reminder',
-      body: 'Don't forget to check out before leaving!',
+      body: "Don't forget to check out before leaving!",
       scheduledTime: scheduledTime,
       channel: 'attendance_channel_id',
     );
