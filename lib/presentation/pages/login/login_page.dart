@@ -56,7 +56,7 @@ class LoginPage extends GetView<LoginController> {
                     hintText: 'Enter your email',
                     keyboardType: TextInputType.emailAddress,
                     validator: controller.validateEmail,
-                    prefixIcon: Icons.email_outlined,
+                    prefixIcon: const Icon(Icons.email_outlined),
                   ),
                   const SizedBox(height: 20),
                   
@@ -83,7 +83,7 @@ class LoginPage extends GetView<LoginController> {
                       hintText: 'Enter your password',
                       obscureText: !controller.isPasswordVisible.value,
                       validator: controller.validatePassword,
-                      prefixIcon: Icons.lock_outline,
+                      prefixIcon: const Icon(Icons.lock_outline),
                       suffixIcon: IconButton(
                         icon: Icon(
                           controller.isPasswordVisible.value

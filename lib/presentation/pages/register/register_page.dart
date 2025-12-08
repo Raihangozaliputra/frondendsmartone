@@ -34,42 +34,42 @@ class RegisterPage extends GetView<RegisterController> {
                   Text(
                     'Create an Account',
                     style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: AppTheme.primaryColor,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.primaryColor,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Fill in your details to get started',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: AppTheme.textSecondary,
-                        ),
+                      color: AppTheme.textSecondary,
+                    ),
                   ),
                   const SizedBox(height: 32),
-                  
+
                   // Full Name Field
                   Text(
                     'Full Name',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   CustomTextField(
                     controller: controller.nameController,
                     hintText: 'Enter your full name',
                     validator: controller.validateName,
-                    prefixIcon: Icons.person_outline,
+                    prefixIcon: const Icon(Icons.person_outline),
                     textCapitalization: TextCapitalization.words,
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // Email Field
                   Text(
                     'Email',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   CustomTextField(
@@ -77,16 +77,16 @@ class RegisterPage extends GetView<RegisterController> {
                     hintText: 'Enter your email',
                     keyboardType: TextInputType.emailAddress,
                     validator: controller.validateEmail,
-                    prefixIcon: Icons.email_outlined,
+                    prefixIcon: const Icon(Icons.email_outlined),
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // Password Field
                   Text(
                     'Password',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Obx(
@@ -95,7 +95,7 @@ class RegisterPage extends GetView<RegisterController> {
                       hintText: 'Create a password',
                       obscureText: !controller.isPasswordVisible.value,
                       validator: controller.validatePassword,
-                      prefixIcon: Icons.lock_outline,
+                      prefixIcon: const Icon(Icons.lock_outline),
                       suffixIcon: IconButton(
                         icon: Icon(
                           controller.isPasswordVisible.value
@@ -108,13 +108,13 @@ class RegisterPage extends GetView<RegisterController> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // Confirm Password Field
                   Text(
                     'Confirm Password',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Obx(
@@ -124,7 +124,7 @@ class RegisterPage extends GetView<RegisterController> {
                       obscureText: !controller.isConfirmPasswordVisible.value,
                       validator: controller.validateConfirmPassword,
                       textInputAction: TextInputAction.done,
-                      prefixIcon: Icons.lock_outline,
+                      prefixIcon: const Icon(Icons.lock_outline),
                       suffixIcon: IconButton(
                         icon: Icon(
                           controller.isConfirmPasswordVisible.value
@@ -134,16 +134,20 @@ class RegisterPage extends GetView<RegisterController> {
                         ),
                         onPressed: controller.toggleConfirmPasswordVisibility,
                       ),
-                      onFieldSubmitted: (_) => controller.register(),
+                      onChanged: (value) {
+                        // Handle text changes if needed
+                      },
                     ),
                   ),
-                  
+
                   const SizedBox(height: 32),
-                  
+
                   // Register Button
                   Obx(
                     () => CustomButton(
-                      onPressed: controller.isLoading.value ? null : controller.register,
+                      onPressed: controller.isLoading.value
+                          ? null
+                          : controller.register,
                       child: controller.isLoading.value
                           ? const SizedBox(
                               width: 24,
@@ -156,9 +160,9 @@ class RegisterPage extends GetView<RegisterController> {
                           : const Text('Create Account'),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
-                  
+
                   // Already have an account
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -184,9 +188,9 @@ class RegisterPage extends GetView<RegisterController> {
                       ),
                     ],
                   ),
-                  
+
                   const SizedBox(height: 16),
-                  
+
                   // Terms and Conditions
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -194,8 +198,8 @@ class RegisterPage extends GetView<RegisterController> {
                       'By creating an account, you agree to our Terms of Service and Privacy Policy',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppTheme.textSecondary,
-                          ),
+                        color: AppTheme.textSecondary,
+                      ),
                     ),
                   ),
                 ],
